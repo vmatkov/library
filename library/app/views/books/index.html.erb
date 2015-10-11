@@ -1,0 +1,14 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<div class="main">
+	<div class="container">
+		<h1>Hello my name is Matjaž</h1>
+		<p>I make Rails apps</p>
+	</div>
+	<% @books.each do |b| %>
+	<div class="book">
+		<p>Ime: <%= b.name %></p>
+		<%= link_to "More...", book_path(b) %>
+	</div>
+	<% end %>
+	<%= link_to 'Create', "books/new" %>
+</div>
