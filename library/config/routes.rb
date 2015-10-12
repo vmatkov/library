@@ -6,11 +6,18 @@ Library::Application.routes.draw do
   get '/books/:id/edit' => 'books#edit', as: :edit_book
   patch '/books/:id' => 'books#update'
 
+  get '/categories' => 'categories#index'
+  get '/categories/new' => 'categories#new'
+  post '/categories' => 'categories#create'
+  get '/categories/:id' => 'categories#show', as: :category
+  get '/categories/:id/edit' => 'categories#edit', as: :edit_category
+  patch '/categories/:id' => 'categories#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'books#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

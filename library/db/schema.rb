@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(version: 20151009174337) do
 
   create_table "books", force: true do |t|
-    t.text    "name"
-    t.text    "author"
+    t.string  "name"
+    t.string  "author"
     t.integer "year"
-    t.integer "category"
+    t.integer "category_id"
   end
 
   create_table "categories", force: true do |t|
-    t.text "name"
+    t.string "name"
   end
 
 end
