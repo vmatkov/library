@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
 def index
 		@categories = Category.all
-		
 	end
 	def show
 		@category = Category.find(params[:id])
@@ -16,6 +15,11 @@ def index
 		else render 'edit'
 		end
 	end
+		def destroy
+    	Category.find(params[:id]).destroy
+    	flash[:success] = "Category deleted"
+    	redirect_to categories_path
+  	end
 	def new
 		@category = Category.new
 		@books = Book.all

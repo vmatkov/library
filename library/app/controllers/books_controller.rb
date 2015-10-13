@@ -16,6 +16,11 @@ class BooksController < ApplicationController
 		else render 'edit'
 		end
 	end
+	def destroy
+    	Book.find(params[:id]).destroy
+    	flash[:success] = "Book deleted"
+    	redirect_to books_path
+  	end
 	def new
 		@book = Book.new
 		@category = Category.all

@@ -1,29 +1,11 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<!--<div class="main">
-	<div class="container">
-		<h1>Hello my name is Matjaž</h1>
-		<p>I make Rails apps</p>
-	</div>
-	<% @books.each do |b| %>
-	<div class="book">
-		<div style="display: inline;">
-		<p>Ime: <%= b.name %></p>
-		<p>Category: <%= b.category_name %></p>
-		</div>
-		<%= link_to "More...", book_path(b) %>
-		<%= link_to "Edit...", edit_book_path(b) %>
-	</div>
-	<% end %>
-	<%= link_to 'Create', "books/new" %>
-</div>-->
-
 <div class="container">
     <div class="row">
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <%= link_to "図書 (Books)", books_path %> | <%= link_to "カテゴリー (Categories)", categories_path %> 
-                </h3>
+                    <%= link_to books_path, {:class => "btn btn-info disabled"} do %> <i class="icon-book"></i> (Books) <% end %>  <%= link_to categories_path, {:class => "btn btn-warning"} do %><i class="icon-list"></i> (Categories) <% end %>
+                </h3><br>
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><i class="icon-filter"></i> Filter</button>
                 </div>
@@ -31,10 +13,10 @@
             <table class="table">
                 <thead>
                     <tr class="filters">                  
-                        <th><input type="text" class="form-control" placeholder="名前 (Name)" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="カテゴリ (Category)" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="エディット (Edit)" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="デリート (Delete)" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Category" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Edit" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Delete" disabled></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,10 +25,12 @@
 	                        <td><%= link_to b.name, book_path(b) %></td>
 	                        <td><%= b.category_name %></td>
 	                        <td><%= link_to edit_book_path(b) do %> <i class="icon-edit"></i><%end%></td>
-	                        <td>Delete (comming soon..)</td>
+	                        <td><%= link_to b, method: :delete, data: {confirm: "Are you sure?"} do%><i class="icon-trash"></i> <% end %></td>
 	                    </tr>
 	                <% end %>
-	                <%= link_to 'Create new book', books_new_path %>
+                    <div class="container">
+	                <%= link_to books_new_path, { :class => "btn btn-success" } do %><strong>+</strong> Add Book<% end %>
+                    </div>
                 </tbody>
             </table>
         </div>

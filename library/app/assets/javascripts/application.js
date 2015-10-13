@@ -14,13 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require bootstrap.min
+//= require bootstrap.min.js
 
-$(document).ready(function(){
+$(document).on('page:load', function(){
 
 	//Index table settings JS
 
-    $('.filterable .btn-filter').click(function(){
+    $('.filterable .btn-filter').on('click', function(){
         var $panel = $(this).parents('.filterable'),
         $filters = $panel.find('.filters input, .filters select'),
         $tbody = $panel.find('.table tbody');
