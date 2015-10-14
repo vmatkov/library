@@ -26,7 +26,7 @@
 	                        <td><%= c.books.count %></td>
 	                        <td><%= link_to edit_category_path(c) do %> <i class="icon-edit"></i><%end%></td>
 	                        <td>
-                            <% if c.books.count == 0 %>
+                            <% if c.books.count == 0 and c.name != 'Other' %>
                                 <%= link_to c, method: :delete, data: {confirm: "Are you sure?"} do%><i class="icon-trash"></i><% end %>
                             <% else %>
                                 <i class="icon-trash"></i>
