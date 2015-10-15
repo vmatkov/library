@@ -13,6 +13,7 @@ Library::Application.routes.draw do
   get '/categories/:id' => 'categories#show', as: :category
   get '/categories/:id/edit' => 'categories#edit', as: :edit_category
   patch '/categories/:id' => 'categories#update'
+  delete '/categories/:id' => 'categories#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
