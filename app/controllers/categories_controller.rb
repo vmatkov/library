@@ -30,7 +30,8 @@ def index
 			redirect_to '/categories' #if saved, redirect us to home page
 		else
 			if @category.errors.any?
-				render 'error'
+				flash[:error] = @category.errors.full_messages
+				redirect_to categories_new_path
 			end
 		end
 	end

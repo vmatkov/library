@@ -31,7 +31,8 @@ class BooksController < ApplicationController
 			redirect_to '/books' #if saved, redirect us to home page
 		else
 			if @book.errors.any?
-				render 'error'
+				flash[:error] = @book.errors.full_messages
+				redirect_to books_new_path
 			end
 		end
 	end
