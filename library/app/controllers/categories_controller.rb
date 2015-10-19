@@ -25,11 +25,13 @@ def index
 		@books = Book.all
 	end
 	def create
-		@category = Category.new(category_params)
+		@category = Category.create(category_params)
 		if @category.save
 			redirect_to '/categories' #if saved, redirect us to home page
 		else
-			render 'new'
+			if @category.errors.any?
+				render 'error'
+			end
 		end
 	end
 	private

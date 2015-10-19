@@ -26,11 +26,13 @@ class BooksController < ApplicationController
 		@category = Category.all
 	end
 	def create
-		@book = Book.new(book_params)
+		@book = Book.create(book_params)
 		if @book.save
 			redirect_to '/books' #if saved, redirect us to home page
 		else
-			render 'new'
+			if @book.errors.any?
+				render 'error'
+			end
 		end
 	end
 	private
