@@ -24,12 +24,7 @@
                   	</div>
             </div>
             <div class="row">
-              <% @category.each do |c| %>
-                <div class="radiobutton">
-                  <input type="radio" id="<%= c.name %>" name="book[category_id]" class="radio" value="<%= c.id %>">
-                  <label for="<%= c.name %>"><%= c.name %></label>
-                </div>
-              <% end %>
+              <%= b.collection_select(:category_id, @category, :id, :name, {:prompt => 'Choose a Category...'}, {:class => 'form-control', :selected => params[:category_id]}) %>
             </div>
             <div class="row">
                 <div class="col-md-12">
