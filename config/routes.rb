@@ -1,4 +1,5 @@
 Library::Application.routes.draw do
+  devise_for :users
   get '/books' => 'books#index'
   get '/books/new' => 'books#new'
   post '/books' => 'books#create'
@@ -14,6 +15,7 @@ Library::Application.routes.draw do
   get '/categories/:id/edit' => 'categories#edit', as: :edit_category
   patch '/categories/:id' => 'categories#update'
   delete '/categories/:id' => 'categories#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
