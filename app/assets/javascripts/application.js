@@ -86,6 +86,7 @@ $(document).on('page:load', function(){
         }
     });
     
+<<<<<<< HEAD
 });
 
 $(function(){
@@ -145,4 +146,6 @@ $(function(){
         }
         init();
     });
+=======
+>>>>>>> 52b4f501fedd148b54941b97793e69ae9e3d5e86
 });
