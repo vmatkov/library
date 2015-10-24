@@ -85,10 +85,7 @@ $(document).on('page:load', function(){
             $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No result found</td></tr>'));
         }
     });
-    
-});
-
-$(function(){
+   
     $('.button-checkbox').each(function(){
         var $widget = $(this),
             $button = $widget.find('button'),
@@ -144,5 +141,5 @@ $(function(){
             }
         }
         init();
-    });
+    });    
 });

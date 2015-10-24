@@ -1,12 +1,12 @@
-<p style="margin-left: 12.5%;margin-top: 2%;"> <%= link_to "Books", books_path %> -> <%= @book.name %> </p>
+<p style="margin-left: 7%;margin-top: 2%;"> <%= link_to "Back", books_path %> <i class="icon-arrow-right"></i> <%= @book.name %></p>
 <br>
 <div class="container">
 	<table class="table">
 		<tbody>
 			<tr class="success">
-				<td><strong>IME KNJIGE</strong></td>
+				<td><strong>BOOK NAME</strong></td>
 				<td></td>
-				<td><strong>AVTOR</strong></td>
+				<td><strong>AUTHOR</strong></td>
 			</tr>
 			<tr class="warning">
 				<td><%= @book.name %></td>
@@ -14,9 +14,9 @@
 				<td><%= @book.author %></td>
 			</tr>
 			<tr class="success">
-				<td><strong>LETO IZDAJE</strong></td>
+				<td><strong>YEAR PUBLISHED</strong></td>
 				<td></td>
-				<td><strong>KATEGORIJA</strong></td>
+				<td><strong>CATEGORY</strong></td>
 			</tr>
 			<tr class="warning">
 				<td><%= @book.year %></td>

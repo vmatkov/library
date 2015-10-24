@@ -1,5 +1,6 @@
 Library::Application.routes.draw do
   devise_for :users
+  get '/home' => 'books#home'
   get '/books' => 'books#index'
   get '/books/new' => 'books#new'
   post '/books' => 'books#create'
@@ -21,7 +22,7 @@ Library::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'books#index'
+  root 'books#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
