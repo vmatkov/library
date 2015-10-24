@@ -1,0 +1,33 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">                  
+                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Category" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Edit" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Delete" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<% @books.each do |b| %>
+	                    <tr>
+	                        <td><%= link_to b.name, book_path(b) %></td>
+	                        <td><%= b.category_name %></td>
+	                        <td><%= link_to edit_book_path(b) do %> <i class="icon-edit"></i><%end%></td>
+	                        <td><%= link_to b, method: :delete, data: {confirm: "Are you sure?"} do%><i class="icon-trash"></i> <% end %></td>
+	                    </tr>
+	                <% end %>
+                    <div class="container">
+	                <%= link_to books_new_path, { :class => "btn btn-success" } do %><strong>+</strong> Add Book<% end %>
+                    <button class="btn btn-default btn-xs btn-filter"><i class="icon-filter"></i> Filter</button>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

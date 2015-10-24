@@ -1,0 +1,39 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">                  
+                        <th><input type="text" class="form-control" placeholder="Category" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Count" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Edit" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Delete" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<% @categories.each do |c| %>
+	                    <tr>
+	                        <td><%= c.name %></td>
+	                        <td><%= c.books.count %></td>
+	                        <td><%= link_to edit_category_path(c) do %> <i class="icon-edit"></i><%end%></td>
+	                        <td>
+                            <% if c.books.count == 0 and c.name != 'Other' %>
+                                <%= link_to c, method: :delete, data: {confirm: "Are you sure?"} do%><i class="icon-trash green"></i><% end %>
+                            <% else %>
+                                <i class="icon-trash red"</i>
+                            <% end %>   
+                            </td>
+	                    </tr>
+	                <% end %>
+	                <div class="container">
+                    <%= link_to categories_new_path, { :class => "btn btn-success" } do %><strong>+</strong> Add Category<% end %>
+                    <button class="btn btn-default btn-xs btn-filter"><i class="icon-filter"></i> Filter</button>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

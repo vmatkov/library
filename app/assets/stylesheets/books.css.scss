@@ -1,0 +1,67 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*INDEX TABLE SETTINGS*/
+
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+
+
+
+/*NEW BOOK CSS SETTINGS*/
+
+.contact-form { 
+	margin-top:15px !important;
+}
+.contact-form .textarea { 
+	min-height:220px !important;
+	resize:none !important;
+}
+.form-control { 
+	box-shadow:none !important;
+	border-color:#eee !important;
+	height:49px !important;
+	width: 100% !important;
+}
+.form-control:focus { 
+	box-shadow:none !important;
+	border-color:#00b09c !important;
+}
+.form-control-feedback { 
+	line-height:50px !important;
+}
+.main-btn { 
+	background:#00b09c !important;
+	border-color:#00b09c !important;
+	color:#fff !important;
+}
+.main-btn:hover { 
+	background:#00a491 !important;
+	color:#fff !important;
+}
+.form-control-feedback {
+	line-height: 50px !important;
+	top: 0px !important;
+}
